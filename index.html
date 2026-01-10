@@ -29,8 +29,17 @@
 
 </head>
 <body>
+        <style>
+    body {
+            font-family: Arial, Helvetica, sans-serif; /* Fallback fonts */
+            font-size: 14px; /* Adjust size */
+            font-weight: normal; /* normal, bold, lighter */
+            color: #333; /* Text color */
+    }
+    </style>
 
     <h2>GANARASKA HIKING TRAIL GEOLOCATION APP</h2>
+
 
     <div id="map"></div>
     
@@ -145,7 +154,7 @@ var circlePineRidgeStart = L.circle([43.949146, -78.292529], {
     radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
-circlePineRidgeStart.bindPopup("<h3>Pine Ridge Start</h3><p>The Pine Ridge section starts at the cairn opposite the Town Hall in Port Hope, beside the Ganaraska River and within sight of Lake Ontario. The initial part is fairly flat, following the Ganaraska River. Be sure to see the fish ladder that allows fish to bypass the dam, near Highway 401. Then the trail follows country roads and paths through farmland and the Ganaraska Forest and skirts the Peterborough Drumlin field.")
+circlePineRidgeStart.bindPopup("<h3>Pine Ridge Start</h3><p><b>This is where the Ganaraska Hiking Trail begins!</b> The Pine Ridge section starts at the cairn opposite the Town Hall in Port Hope beside the Ganaraska River and within sight of Lake Ontario. The initial part is fairly flat, following the Ganaraska River. Be sure to see the fish ladder that allows fish to bypass the dam, near Highway 401. Then the trail follows country roads and paths through farmland and the Ganaraska Forest and skirts the Peterborough Drumlin field.")
 
 
 var circleKawarthaStart = L.circle([44.291935, -78.630902], { 
@@ -168,7 +177,7 @@ var circleWildernessStart = L.circle([44.806938, -78.813207], {
 circleWildernessStart.bindPopup("<h3>Wilderness Start</h3><p>As well as being scenic, it is rugged and challenging. DO NOT hike this section alone! It is strongly recommended that the Wilderness Section only be hiked with an experienced hiker familiar with the Trail. Main trail is 58 kms, 72 kms in total with side trails.");
 
 
-var circleOrilliaStart = L.circle([44.756564, -79.15519], { 
+var circleOrilliaStart = L.circle([44.756539, -79.15518], { 
     color: 'orange',
     //fillColor: '#f03',
     fillOpacity: 0.5,
@@ -178,7 +187,7 @@ var circleOrilliaStart = L.circle([44.756564, -79.15519], {
 circleOrilliaStart.bindPopup("<h3>Orillia Start</h3><p>44.7565423, -79.1551879<p>The Orillia section starts at Sadowa and ends after almost 70 kilometres at Oro Medonte Line 6N in Sugarbush Estates south of Horseshoe Valley Road. From Sadowa to Atherley the trail is primarily on country roads, mostly quite peaceful and scenic. The trail then skirts the shore of Lake Couchiching and runs along the Lightfoot Trail system through the City of Orillia following the Mariposa Trail. It heads south to cross under Highway 11 and through Scout Valley west of the highway. This area is picturesque and suitable for novices. It then runs west on roads turning north and finally east through fields and woods. Overall, the trail is mostly flat and presents a variety of hiking locales from lakeside parks to rural woodlands.");
   
     
-var circleBarrieStart = L.circle([44.555599, -79.618865], { 
+var circleBarrieStart = L.circle([44.5553241,-79.6189653], { 
     color: 'purple',
     //fillColor: '#f03',
     fillOpacity: 0.3,
@@ -237,7 +246,7 @@ var circleMidlandStart = L.circle([44.677037, -79.741592], {
 circleMidlandStart.bindPopup("<h3>Midland Trail Start</h3><p>The first 13.5 km part of the Midland section of the Ganaraska Hiking Trail is mostly off-road. Starting just north of Vasey Road, the southern half of the Midland section generally follows a fence line over private land. The northern half follows a snowmobile trail and the Tay Shore Trail, or its off-road twinning trail. The second part of the Midland section starts at the Wye River, adjacent to Sainte Marie Among the Hurons and the Martyrs’ Shrine, on the outskirts of Midland, and follows the Wye River, the Midland waterfront with its gorgeous views of Georgian Bay. It continues through forests and ends at Overheadbridge Road in Tiny Township, which is the start of the Tiny section. This section is on flat or undulating terrain. Some of the trail is a dirt path, some of the urban trails are paved. 28 kms in total.")    
 
 
-var circleOroMedonteStart = L.circle([44.571721, -79.674428], { 
+var circleOroMedonteStart = L.circle([44.5715436,-79.6745914], { 
     color: 'deepskyblue',
     fillColor: '#00BFFF',
     fillOpacity: 0.3,
@@ -688,6 +697,14 @@ circleOroMedonteStart.bindPopup("<h3>Oro-Medonte Trail Start</h3><p>Gentle undul
 var polyline = L.polyline(latlngs, {color: 'tomato', weight: 6}).addTo(map);
 polyline.bindPopup("<b>Pine Ridge Trail</b><br>");
 
+var circledotPineRidgeStart = L.circle([43.949146, -78.292529], { 
+    color: 'tomato',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+
     // KAWARTHA MAIN TRAIL
 
         var latlngs = [
@@ -1087,6 +1104,15 @@ polyline.bindPopup("<b>Pine Ridge Trail</b><br>");
 
 var polyline = L.polyline(latlngs, {color: 'green', weight: 6}).addTo(map);
 polyline.bindPopup("<b>Kawartha Main Trail</b><br>");
+
+var circledotKawarthStart = L.circle([44.2919050, -78.6308860], { 
+    color: 'green',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+
 
 
         // WILDERNESS MAIN TRAIL
@@ -2153,6 +2179,15 @@ var latlngs = [
 
 var polyline = L.polyline(latlngs, {color: 'steelblue', weight: 6}).addTo(map);
 polyline.bindPopup("<b>Wilderness Main Trail</b><br>");
+
+var circledotWildernessStart = L.circle([44.8068830, -78.8132760], { 
+    color: 'steelblue',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+
 
         // WILDERNESS SIDE TRAILS:
 
@@ -3304,8 +3339,8 @@ polyline.bindPopup("<b>Wilderness Main Trail</b><br>");
     // ORILLIA MAIN TRAIL
 
 var latlngs = [
-    [44.7560310, -79.1569510],
-    [44.7566880, -79.1546910],
+    
+    [44.756539, -79.15518],
     [44.7538170, -79.1648620],
     [44.7532510, -79.1673390],
     [44.7528760, -79.1682930],
@@ -3646,6 +3681,14 @@ var latlngs = [
 var polyline = L.polyline(latlngs, {color: 'orange', weight: 6}).addTo(map);
 polyline.bindPopup("<b>Orillia Main Trail</b>");
 
+var circledotWildernessStart = L.circle([44.756539, -79.15518], { 
+    color: 'orange',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+
          
         // ORILLIA SIDE TRAIL
 
@@ -3679,6 +3722,7 @@ polyline.bindPopup("<b>Orillia Main Trail</b>");
     // BARRIE MAIN TRAIL
 
     var latlngs = [
+    [44.3402840, -79.8428310],
     [44.3407060, -79.8440160],
     [44.3411910, -79.8437150],
     [44.3414530, -79.8437850],
@@ -4285,6 +4329,15 @@ polyline.bindPopup("<b>Orillia Main Trail</b>");
 var polyline = L.polyline(latlngs, {color: 'purple', weight: 6}).addTo(map);
 polyline.bindPopup("<b>Barrie Main Trail</b><br>");
 
+var circledotBarrieStart = L.circle([44.5553241,-79.6189653], { 
+    color: 'purple',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+
+
 // MAD RIVER MAIN TRAIL
 
 var latlngs = [
@@ -4546,6 +4599,14 @@ var latlngs = [
 
 var polyline = L.polyline(latlngs, {color: 'mediumseagreen', weight: 6}).addTo(map);
 polyline.bindPopup("<b>Mad River Main Trail</b><br>");
+
+var circledotMadRiverStart = L.circle([44.3402840, -79.8428310], { 
+    color: 'mediumseagreen',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
 
 // WASAGA BEACH MAIN TRAIL
 
@@ -4874,9 +4935,9 @@ var latlngs = [
     [44.3526700, -80.1497320],
 ];
 
-
 var polyline = L.polyline(latlngs, {color: 'mediumvioletred', weight: 6}).addTo(map);
 polyline.bindPopup("<b>Wasaga Beach Main Trail</b><br>");
+
 
 // TINY MAIN TRAIL
 
@@ -4965,11 +5026,22 @@ var latlngs = [
     [44.5668300, -79.9908400],
     [44.5665200, -79.9919100],
     [44.5661400, -79.9924500],
-    [44.5652500, -79.9945400],
+    [44.5654282,-79.9943301],
 ];
 
 var polyline = L.polyline(latlngs, {color: 'teal', weight: 6}).addTo(map);
 polyline.bindPopup("<b>Tiny Main Trail</b><br>");
+
+// Put this here so dot covers Tiny trail end. Thumbs up! :)
+var circledotWasagaBeachStart = L.circle([44.5653190, -79.9945310], { 
+    color: 'mediumvioletred',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+
+
 
 // MIDLAND MAIN TRAIL
 
@@ -5297,6 +5369,17 @@ var latlngs = [
 var polyline = L.polyline(latlngs, {color: 'darkorange', weight: 6}).addTo(map);
 polyline.bindPopup("<b>Tiny Main Trail</b><br>");
 
+
+// Placed here so dot covers both Tiny & Midland trails. :)
+var circledotTinyStart = L.circle([44.7499986, -79.9602998], { 
+    color: 'teal',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+
+
 // ORO-MEDONTE MAIN TRAIL
 
 var latlngs = [
@@ -5415,6 +5498,24 @@ var latlngs = [
 var polyline = L.polyline(latlngs, {color: 'deepskyblue', weight: 6}).addTo(map);
 polyline.bindPopup("<b>Oro-Medonte Main Trail</b><br>");
 
+var circledotOroMedonteStart = L.circle([44.5715436,-79.6745914], { 
+    color: 'deepskyblue',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+
+// Dot here to cover both trails :)
+var circledotMidlandStart = L.circle([44.6770280, -79.7416420], { 
+    color: 'darkorange',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+
+
 
 // Define polygon coordinates for Simcoe County Forest Tracts
     var Breedoncoords = [
@@ -5461,7 +5562,7 @@ polyline.bindPopup("<b>Oro-Medonte Main Trail</b><br>");
       fillOpacity: 0.5     // Fill transparency
     }).addTo(map);
 
-    polygon.bindPopup("Simcoe County Forest - <b>Strachan Tract.</b>");
+    polygon.bindPopup("Simcoe County Forest - <b>Strachan Tract</b><p>");
 
 
 
