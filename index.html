@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GHTA Geolocation</title>
     <!-- Thank you, Leaflet! 
-     This map produced by VICTOR TOLGYESSY of GoTheDistanceMaps 
-     for the Ganaraska Hiking Trail Assocciation Inc., c. 2026 or thereabouts... .) -->
+     This online map is for the Ganaraska Hiking Trail Association Inc., produced by VICTOR TOLGYESSY of GoTheDistanceMaps 
+     with help from his clever son Jake who is working towards a PhD in computer science somethingorother... LOL!! :) -->
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -30,7 +30,7 @@
 </head>
 <body>
 
-    <h2>GANARASKA HIKING TRAIL ASSOCIATION</h2>
+    <h2>GANARASKA HIKING TRAIL GEOLOCATION APP</h2>
 
     <div id="map"></div>
     
@@ -142,7 +142,7 @@ var circlePineRidgeStart = L.circle([43.949146, -78.292529], {
     color: 'tomato',
     fillColor: '#FF6347',
     fillOpacity: 0.3,
-    radius: 1000
+    radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
 circlePineRidgeStart.bindPopup("<h3>Pine Ridge Start</h3><p>The Pine Ridge section starts at the cairn opposite the Town Hall in Port Hope, beside the Ganaraska River and within sight of Lake Ontario. The initial part is fairly flat, following the Ganaraska River. Be sure to see the fish ladder that allows fish to bypass the dam, near Highway 401. Then the trail follows country roads and paths through farmland and the Ganaraska Forest and skirts the Peterborough Drumlin field.")
@@ -152,7 +152,7 @@ var circleKawarthaStart = L.circle([44.291935, -78.630902], {
     color: 'green',
     //fillColor: '#f03',
     fillOpacity: 0.3,
-    radius: 900
+    radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
 circleKawarthaStart.bindPopup("<h3>Kawartha Start</h3><p>The first 50 kilometres are flat, and skirts through the Kawartha Lakes. The next 20 kilometres are rugged in Canadian Shield country, a vast geological region characterized by exposed Precambrian rock.")
@@ -162,7 +162,7 @@ var circleWildernessStart = L.circle([44.806938, -78.813207], {
     color: 'steelblue',
     fillColor: '#4682B4',
     fillOpacity: 0.3,
-    radius: 900
+    radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
 circleWildernessStart.bindPopup("<h3>Wilderness Start</h3><p>As well as being scenic, it is rugged and challenging. DO NOT hike this section alone! It is strongly recommended that the Wilderness Section only be hiked with an experienced hiker familiar with the Trail. Main trail is 58 kms, 72 kms in total with side trails.");
@@ -172,7 +172,7 @@ var circleOrilliaStart = L.circle([44.756564, -79.15519], {
     color: 'orange',
     //fillColor: '#f03',
     fillOpacity: 0.5,
-    radius: 800
+    radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
 circleOrilliaStart.bindPopup("<h3>Orillia Start</h3><p>44.7565423, -79.1551879<p>The Orillia section starts at Sadowa and ends after almost 70 kilometres at Oro Medonte Line 6N in Sugarbush Estates south of Horseshoe Valley Road. From Sadowa to Atherley the trail is primarily on country roads, mostly quite peaceful and scenic. The trail then skirts the shore of Lake Couchiching and runs along the Lightfoot Trail system through the City of Orillia following the Mariposa Trail. It heads south to cross under Highway 11 and through Scout Valley west of the highway. This area is picturesque and suitable for novices. It then runs west on roads turning north and finally east through fields and woods. Overall, the trail is mostly flat and presents a variety of hiking locales from lakeside parks to rural woodlands.");
@@ -182,7 +182,7 @@ var circleBarrieStart = L.circle([44.555599, -79.618865], {
     color: 'purple',
     //fillColor: '#f03',
     fillOpacity: 0.3,
-    radius: 900
+    radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
 circleBarrieStart.bindPopup("<h3>Barrie Start</h3><p>44.555427, -79.618947<p>The Barrie section provides a variety of hiking experiences and goes through many Simcoe County Forest tracts, Copeland Forest, Springwater Provincial Park and Minesing Wetlands. There is some road walking, some rail trail walking, and lots of forest trails. Both novice and experienced hikers will find something to enjoy. Approx. 50 kms.</p>");
@@ -192,7 +192,7 @@ var circleMadRiverStart = L.circle([44.340345, -79.84295], {
     color: 'mediumseagreen',
     fillColor: '#3CB371',
     fillOpacity: 0.3,
-    radius: 900
+    radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
 circleMadRiverStart.bindPopup("<h3>Mad River Start</h3><p>The Mad River section derives its name from the river which runs parallel to the trail in many places. Sometimes in the spring, west of Avening, trout can be seen going upstream to spawn. There are some outstanding scenic views from Ten Hill and McKinney’s Hill. The Mad River section passes through the Hogback, Brentwood, and Lawden (aka Louden) Tracts of the Simcoe County Forests, as well as through the New Lowell, Carruthers Memorial and Glencairn Conservation areas, and the Escarpment Biosphere Reserve. The Mad River section meets the Bruce Trail high above Glen Huron at the Western Cairn of the Ganaraska Hiking Trail.");
@@ -202,7 +202,7 @@ var circleWasagaBeachStart = L.circle([44.565394, -79.994545], {
     color: 'mediumvioletred',
     fillColor: '#C71585',
     fillOpacity: 0.3,
-    radius: 900
+    radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
 circleWasagaBeachStart.bindPopup("<h3>Wasaga Beach Start</h3><p>The trail winds through the fragile ancient parabolic sand dunes of Wasaga Beach Provincial Park to Wasaga Beach, providing great views of the Nottawasaga River deep below in the valley. From there, the trail goes through the valley of the McIntyre Creek and passes along quiet country roads to Smithdale, east of Glen Huron, where it connects with the Mad River section. The section is about 48.5 kilometres long and is suitable for novices.")
@@ -213,7 +213,7 @@ var circleMadRiverMeetsBruceTrail = L.circle([44.347052, -80.19331], {
     color: 'mediumseagreen',
     fillColor: '#3CB371',
     fillOpacity: 0.3,
-    radius: 900
+    radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
 circleMadRiverMeetsBruceTrail.bindPopup("<h3>Major Trail Connection</h3><p>Here is where the Ganaraska Trail joins the Bruce Trail")
@@ -223,7 +223,7 @@ var circleTinyStart = L.circle([44.749994, -79.960299], {
     color: 'teal',
     fillColor: '#008080',
     fillOpacity: 0.3,
-    radius: 900
+    radius: 300
 }).addTo(map);
 circleTinyStart.bindPopup("<h3>Tiny Trail Start</h3><p>The trail goes through the Thompson Tract of Simcoe County Forests along the Tiny Trail (railtrail) and through the Tiny Marsh which is a great location to view and listen to wildlife as you walk along the berms. Several species of waterfowl nest in the marsh and during spring and summer the wildflowers are gorgeous and there are large batches of colorful dragonflies and butterflies along the trail. The section is mostly flat, with a couple of hills, and is suitable for beginners. 50 kms in length.")
 
@@ -232,7 +232,7 @@ var circleMidlandStart = L.circle([44.677037, -79.741592], {
     color: 'darkorange',
     fillColor: '#FF8C00',
     fillOpacity: 0.3,
-    radius: 900
+    radius: 300
 }).addTo(map);
 circleMidlandStart.bindPopup("<h3>Midland Trail Start</h3><p>The first 13.5 km part of the Midland section of the Ganaraska Hiking Trail is mostly off-road. Starting just north of Vasey Road, the southern half of the Midland section generally follows a fence line over private land. The northern half follows a snowmobile trail and the Tay Shore Trail, or its off-road twinning trail. The second part of the Midland section starts at the Wye River, adjacent to Sainte Marie Among the Hurons and the Martyrs’ Shrine, on the outskirts of Midland, and follows the Wye River, the Midland waterfront with its gorgeous views of Georgian Bay. It continues through forests and ends at Overheadbridge Road in Tiny Township, which is the start of the Tiny section. This section is on flat or undulating terrain. Some of the trail is a dirt path, some of the urban trails are paved. 28 kms in total.")    
 
@@ -241,7 +241,8 @@ var circleOroMedonteStart = L.circle([44.571721, -79.674428], {
     color: 'deepskyblue',
     fillColor: '#00BFFF',
     fillOpacity: 0.3,
-    radius: 900
+    weight: 3,
+    radius: 300
 }).addTo(map);
 circleOroMedonteStart.bindPopup("<h3>Oro-Medonte Trail Start</h3><p>Gentle undulating terrain, suitable for beginners, 18.5 km in length. The south end of the Oro Medonte trail starts in the Copeland Forest, north of Barrie, where it branches off the Barrie trail going north to Vasey Road.")
 
@@ -5415,26 +5416,55 @@ var polyline = L.polyline(latlngs, {color: 'deepskyblue', weight: 6}).addTo(map)
 polyline.bindPopup("<b>Oro-Medonte Main Trail</b><br>");
 
 
-var Rathburn1polygon = L.polygon ([
-    [44.664837, -79.227468],
-    [44.672725, -79.191561],
-    [44.661058, -79.186539],
-    [44.659439, -79.193827],
-    [44.642295, -79.186440],
-    [44.639104, -79.201215],
-    [44.633094, -79.198519],
-    [44.6299180, -79.2131033],
-]).addTo(map);
+// Define polygon coordinates for Simcoe County Forest Tracts
+    var Breedoncoords = [
+      [44.5503535,-79.5517053],
+      [44.5455848,-79.5476892],
+      [44.5446282,-79.5499007],
+      [44.5423300,-79.5479845],
+      [44.5404537,-79.5525259],
+      [44.5404969,-79.5531591],
+      [44.5402225,-79.5544479],
+      [44.5468333,-79.5598415],
+    ];
+
+    
+    // SIMCOE COUNTY FOREST TRACTS... ONE AT A TIME... LOL!! .)
+    
+    // Create polygon with custom colors
+    var polygon = L.polygon(Breedoncoords, {
+      color: 'salmon',       // Border color
+      weight: 2,           // Border thickness
+      fillColor: 'salmon', // Fill color
+      fillOpacity: 0.4     // Fill transparency
+    }).addTo(map);
+
+    polygon.bindPopup("Simcoe County Forest - <b>Breedon Tract</b>");
 
 
-//var Oropolygon = L.polygon ([
+    var Strachan1coords = [
+      [44.537831,-79.583875],
+      [44.532949,-79.579724],
+      [44.536167,-79.572320],
+      [44.536852,-79.572947],
+      [44.5400428,-79.5655344],
+      [44.5424067,-79.5675579],
+      [44.539260,-79.574969],
+      [44.540992,-79.576553],
+    ];
 
-//[44.560717893468308, -79.593156055615466], 
-//[44.560587953088536, -79.593047190904514 ], 
-//[44.558114647519616, -79.590975140311244], 
+    // Create polygon with custom colors
+    var polygon = L.polygon(Strachan1coords, {
+      color: 'salmon',       // Border color
+      weight: 2,           // Border thickness
+      fillColor: 'salmon', // Fill color
+      fillOpacity: 0.5     // Fill transparency
+    }).addTo(map);
 
-//]).addTo(map);
+    polygon.bindPopup("Simcoe County Forest - <b>Strachan Tract.</b>");
+
+
+
 
 </script>
 </html>
-
