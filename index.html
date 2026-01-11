@@ -99,7 +99,7 @@ function success(pos) {
 
         }
 
-    //marker = L.marker([lat, lng]).addTo(map);
+    marker = L.marker([lat, lng]).addTo(map);
     circle = L.circle([lat, lng], { radius: accuracy, color: 'salmon' }).addTo(map);
 
         if (!zoomed) {
@@ -5723,4 +5723,5 @@ var Crawfordcoords = [
 
 </script>
 </html>
+
 
