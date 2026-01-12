@@ -99,9 +99,10 @@ function success(pos) {
 
         }
 
-    marker = L.marker([lat, lng]).addTo(map);
+     marker = L.marker([lat, lng]).addTo(map);
     circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);  // Original code.
     //circle = L.circle([lat, lng], { radius: accuracy, color: 'salmon' }).addTo(map);  // Added color to circle and it works! But, I'll keep it blue.
+
 
         if (!zoomed) {
         zoomed = map.fitBounds(circle.getBounds());
@@ -281,40 +282,40 @@ circleOroMedonteStart.bindPopup("<h3>Oro-Medonte Trail Start</h3><p>Gentle undul
         // Parking ORILLIA
 
     var parkingOrillia1icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.756683,-79.155683],{icon:parkingOrillia1icon}).addTo(map).bindPopup("Parking for 3-4 cars roadside on NW corner of Sadowa and Chisolm Trail.");
+        L.marker([44.756683,-79.155683],{icon:parkingOrillia1icon}).addTo(map).bindPopup("<b>Parking</b> for 3-4 cars roadside on NW corner of Sadowa and Chisolm Trail.");
     
     var parkingOrillia2icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.641726, -79.219593],{icon:parkingOrillia2icon}).addTo(map).bindPopup("Limited parking along roadside on Con 12, west of HWY 169.");
+        L.marker([44.641726, -79.219593],{icon:parkingOrillia2icon}).addTo(map).bindPopup("<b>Limited parking</b> along roadside on Con 12, west of HWY 169.");
 
     var parkingOrillia3icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.605007, -79.373018],{icon:parkingOrillia3icon}).addTo(map).bindPopup("Seasonal parking for 3-4 vehicles north side of HWY 12 at Rama Trail entrance.");
+        L.marker([44.605007, -79.373018],{icon:parkingOrillia3icon}).addTo(map).bindPopup("<b>Seasonal parking</b> for 3-4 vehicles north side of HWY 12 at Rama Trail entrance.");
 
     var parkingOrillia4icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.607143, -79.386169],{icon:parkingOrillia4icon}).addTo(map).bindPopup("Tudhope Park has plenty of parking, plus a public beach, washrooms & concessions.");
+        L.marker([44.607143, -79.386169],{icon:parkingOrillia4icon}).addTo(map).bindPopup("<b>Tudhope Park</b> has plenty of parking, plus a public beach, washrooms & concessions.");
 
     var parkingOrillia5icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.571904, -79.447623],{icon:parkingOrillia5icon}).addTo(map).bindPopup("Plenty of parking at Scout Valley Baseball Field on Memorial Ave.");
+        L.marker([44.571904, -79.447623],{icon:parkingOrillia5icon}).addTo(map).bindPopup("Plenty of parking at <b>Scout Valley Baseball Field</b> on Memorial Ave.");
     
     var parkingOrillia6icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.579267, -79.454361],{icon:parkingOrillia6icon}).addTo(map).bindPopup("Plenty of parking at Line 15 entrace to Scout Valley Park at Regan House.");
+        L.marker([44.579267, -79.454361],{icon:parkingOrillia6icon}).addTo(map).bindPopup("Plenty of parking at Line 15 entrace to <b>Scout Valley Park</b> at Regan House.");
 
     var parkingOrillia7icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.586268, -79.453405],{icon:parkingOrillia7icon}).addTo(map).bindPopup("Parking for 10+ spaces and seasonal washrooms. Be cautious of traffic along Old Barrie Rd.");
+        L.marker([44.586268, -79.453405],{icon:parkingOrillia7icon}).addTo(map).bindPopup("Parking for 10+ spaces and seasonal washrooms at main entrance of <b>Scout Valley Park</b>. Be cautious of traffic along Old Barrie Rd.");
 
     var parkingOrillia8icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.55589,-79.51775],{icon:parkingOrillia8icon}).addTo(map).bindPopup("Plenty of street parking for several vehicles."); 
+        L.marker([44.55589,-79.51775],{icon:parkingOrillia8icon}).addTo(map).bindPopup("Plenty of <b>street parking</b> for several vehicles."); 
 
     var parkingOrillia9icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.539924, -79.56612],{icon:parkingOrillia9icon}).addTo(map).bindPopup("Parking for about 15 cars is accessed on the west side of Line 8N. In winter, parking is cleared for about 6 cars.");
+        L.marker([44.539924, -79.56612],{icon:parkingOrillia9icon}).addTo(map).bindPopup("<b>Parking</b> for about 15 cars is accessed on the west side of Line 8N. In winter, parking is cleared for about 6 cars.");
 
     var parkingOrillia10icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.556147, -79.586969],{icon:parkingOrillia10icon}).addTo(map).bindPopup("There are multiple parking lots, cleared in the winter, accessed off Bass Lake Side Road East, 2 on the south side, and 1 on the north side, between Lines 7 and 8.");
+        L.marker([44.556147, -79.586969],{icon:parkingOrillia10icon}).addTo(map).bindPopup("There are <b>multiple parking lots</b> cleared in the winter, accessed off Bass Lake Side Road East, 2 on the south side, and 1 on the north side, between Lines 7 and 8.");
 
     var parkingOrillia11icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.55449,-79.59326],{icon:parkingOrillia11icon}).addTo(map).bindPopup("Additional parking near SCMBC's 'The Hub'");
+        L.marker([44.55449,-79.59326],{icon:parkingOrillia11icon}).addTo(map).bindPopup("<b>Additional parking</b> near SCMBC's 'The Hub'");
 
     var parkingOrillia11icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-        L.marker([44.55320,-79.59528],{icon:parkingOrillia11icon}).addTo(map).bindPopup("Simcoe County Mountain Bike Club's 'The Hub' parking for 10+ vehicles'");
+        L.marker([44.55320,-79.59528],{icon:parkingOrillia11icon}).addTo(map).bindPopup("Simcoe County Mountain Bike Club's <b>'The Hub'</b> parking for 10+ vehicles'");
 
     
     // Parking BARRIE
@@ -3681,7 +3682,7 @@ var latlngs = [
 
 var Orilliapolyline = L.polyline(latlngs, {color: 'orange', weight: 6}).addTo(map);
 //Orilliapolyline.bindPopup("<b>Orillia Main Trail</b><p>"); //This is the original popup.
-    Orilliapolyline.bindPopup('<a href="https://www.facebook.com/GHTAOrillia/" target="_blank">www.facebook.com/GHTAOrillia</a><p><b>Orillia Main Trail');
+    Orilliapolyline.bindPopup('<a href="https://www.facebook.com/GHTAOrillia/" target="_blank">www.facebook.com/GHTAOrillia</a><p><b>Orillia Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
 
 
 var circledotWildernessStart = L.circle([44.756539, -79.15518], { 
@@ -4331,7 +4332,7 @@ var circledotWildernessStart = L.circle([44.756539, -79.15518], {
 
 var Barriepolyline = L.polyline(latlngs, {color: 'purple', weight: 6}).addTo(map);
         //Barriepolyline.bindPopup("<b>Barrie Main Trail</b><br>");
-            Barriepolyline.bindPopup('<a href="https://www.facebook.com/GHTAbarrie" target="_blank">www.facebook.com/GHTAOrillia</a><p><b>Barrie Main Trail');
+            Barriepolyline.bindPopup('<a href="https://www.facebook.com/GHTAbarrie" target="_blank">www.facebook.com/GHTAOrillia</a><p><b>Barrie Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
 
 var circledotBarrieStart = L.circle([44.5553241,-79.6189653], { 
     color: 'purple',
@@ -5505,6 +5506,7 @@ polyline.bindPopup("<b>Oro-Medonte Main Trail</b><br>");
 
 // START DOTS IN CLUB COLOURS - ALLOWS FOR COORDINATE POPUPS!!
 
+// Dot put here to cover both trails, but most are up top somehwhere :)
 var circledotOroMedonteStart = L.circle([44.5715436,-79.6745914], { 
     color: 'deepskyblue',
     //fillColor: '#00BFFF0',
@@ -5513,7 +5515,7 @@ var circledotOroMedonteStart = L.circle([44.5715436,-79.6745914], {
     radius: 20,
 }).addTo(map);
 
-// Dot here to cover both trails :)
+// Dot put here to cover both trails, but most are up top somehwhere :)
 var circledotMidlandStart = L.circle([44.6770280, -79.7416420], { 
     color: 'darkorange',
     //fillColor: '#00BFFF0',
@@ -5719,11 +5721,84 @@ var Crawfordcoords = [
     polygon.bindPopup("Simcoe County Forest - <b>Johnson Tract</b><p>");
 
 
+var Tustincoords = [
+      [44.5539461,-79.6386551],
+      [44.5571528,-79.6310119],
+      [44.5524689,-79.6268746],
+      [44.5491649,-79.6345392],
+      
+    ];
+
+    // Create polygon with custom colors
+    var polygon = L.polygon(Tustincoords, {
+      color: 'salmon',       // Border color
+      weight: 2,           // Border thickness
+      fillColor: 'salmon', // Fill color
+      fillOpacity: 0.5     // Fill transparency
+    }).addTo(map);
+
+    polygon.bindPopup("Simcoe County Forest - <b>Tustin Tract</b><p>");
+
+
+var Amoscoords = [
+      [44.568919, -79.659556],
+      [44.5716472,-79.6531776],
+      [44.5687778,-79.6507728],
+      [44.566062, -79.657200],
+      
+    ];
+
+    // Create polygon with custom colors
+    var polygon = L.polygon(Amoscoords, {
+      color: 'salmon',       // Border color
+      weight: 2,           // Border thickness
+      fillColor: 'salmon', // Fill color
+      fillOpacity: 0.5     // Fill transparency
+    }).addTo(map);
+
+    polygon.bindPopup("Simcoe County Forest - <b>Amos Tract</b><p>");
+
+
+
+
+        // DISTANCE MARKERS:
+
+    // ORILLIA
+
+    var OrilliaDist1 = L.circle([44.722814, -79.174214], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 15,
+}).addTo(map);
+OrilliaDist1.bindPopup("<b>KM 5.3</b><br>").addTo(map);
+
+
+    var OrilliaDist2 = L.circle([44.669041, -79.149885], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 15,
+}).addTo(map);
+OrilliaDist2.bindPopup("<b>KM 11.9</b><br>").addTo(map);
+
+
+    var OrilliaDist3 = L.circle([44.660958, -79.186397], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 15,
+}).addTo(map);
+OrilliaDist3.bindPopup("<b>KM 14.9</b><br>").addTo(map);
+
+
+
+
 
 
 
 </script>
 </html>
-
-
-
