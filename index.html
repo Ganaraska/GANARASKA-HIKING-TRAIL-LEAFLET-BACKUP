@@ -8,7 +8,9 @@
      with help from his clever son Jake who is working towards a PhD in computer science somethingorother... LOL!! :) -->
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+
+    
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
 
      <!-- Make sure you put this AFTER Leaflet's CSS -->
@@ -27,6 +29,7 @@
 
      </style>
 
+
 </head>
 <body>
         <style>
@@ -38,7 +41,7 @@
     }
     </style>
 
-    <h2>GANARASKA HIKING TRAIL GEOLOCATION MAP-APP</h2>
+    <h2>GANARASKA HIKING TRAIL GEOLOCATION APP</h2>
 
 
     <div id="map"></div>
@@ -207,6 +210,9 @@ map.on('click', onMapClick);
                     alert("Error searching location.");
                 });
         }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 // GHTA TRAIL NETWORK:
@@ -404,8 +410,6 @@ circleOroMedonteStart.bindPopup("<h3>Oro-Medonte Trail Start</h3><p>Gentle undul
 
     var pointofinterestPineRide1icon = L.icon({iconUrl: 'poi-iconblue.png', iconSize: [25, 25]});
          L.marker([43.976988,-78.332168],{icon:pointofinterestPineRide1icon}).addTo(map).bindPopup("<b>Northumberland Hills Drumlins</b><br>Drumlins are elongated, oval-shaped mounds of glacial till deposited and shaped beneath advancing ice sheets during the last ice age.");
-
-
 
 
 
@@ -2454,7 +2458,7 @@ var circledotWildernessStart = L.circle([44.8068830, -78.8132760], {
                 ];
 
             var polyline = L.polyline(latlngs, {color: 'peru', weight: 4}).addTo(map);
-            polyline.bindPopup("<b>Wilderness Side Trail</b><p>Queen's Corridor<br>");
+            polyline.bindPopup("<b>Wilderness Side Trail</b><br>Queen's Corridor<br>");
 
 
                 // WILDERNESS VICTORIA BRIDGE TO HIGH FALLS SIDE TRAIL
@@ -2688,7 +2692,7 @@ var circledotWildernessStart = L.circle([44.8068830, -78.8132760], {
                 ];
 
             var polyline = L.polyline(latlngs, {color: 'plum', weight: 4}).addTo(map);
-            polyline.bindPopup("<b>Wilderness Side Trail</b><p>Victoria Bridge to High Falls<br>");
+            polyline.bindPopup("<b>Wilderness Side Trail</b><br>Victoria Bridge to High Falls<br>");
 
 
                 // ANSON MOUNTAIN SIDE TRAIL
@@ -2777,7 +2781,7 @@ var circledotWildernessStart = L.circle([44.8068830, -78.8132760], {
                 ];
 
                 var polyline = L.polyline(latlngs, {color: 'tomato', weight: 4}).addTo(map);
-                polyline.bindPopup("<b>Wilderness Side Trail</b><p>Anson Mountain<br>");
+                polyline.bindPopup("<b>Wilderness Side Trail</b><br>Anson Mountain<br>");
 
 
                     // WILDERNESS SHELDON LAKE DAY USE SIDE TRAIL
@@ -2797,7 +2801,7 @@ var circledotWildernessStart = L.circle([44.8068830, -78.8132760], {
                 ];
 
                 var polyline = L.polyline(latlngs, {color: 'tomato', weight: 4}).addTo(map);
-                polyline.bindPopup("<b>Wilderness Side Trail</b><p>Sheldon Lake Day Use<br>");
+                polyline.bindPopup("<b>Wilderness Side Trail</b><br>Sheldon Lake Day Use<br>");
 
 
                     // WILDERNESS OTTER LAKE SIDE TRAIL
@@ -2827,7 +2831,7 @@ var circledotWildernessStart = L.circle([44.8068830, -78.8132760], {
                 ];
 
                 var polyline = L.polyline(latlngs, {color: 'mediumvioletred', weight: 4}).addTo(map);
-                polyline.bindPopup("<b>Wilderness Side Trail</b><p>Otter Lake<br>");
+                polyline.bindPopup("<b>Wilderness Side Trail</b><br>Otter Lake<br>");
 
 
                     // MONTGOMERY CREEK SIDE TRAIL
@@ -2887,7 +2891,7 @@ var circledotWildernessStart = L.circle([44.8068830, -78.8132760], {
                 ];
 
                 var polyline = L.polyline(latlngs, {color: 'pink', weight: 4}).addTo(map);
-                polyline.bindPopup("<b>Wilderness Side Trail</b><p>Montgomery Creek<br>");
+                polyline.bindPopup("<b>Wilderness Side Trail</b><br>Montgomery Creek<br>");
 
 
                 // WILDERNESS HIGH FALLS SIDE TRAIL
@@ -3028,7 +3032,7 @@ var circledotWildernessStart = L.circle([44.8068830, -78.8132760], {
                 ];
 
                 var polyline = L.polyline(latlngs, {color: 'salmon', weight: 4}).addTo(map);
-                polyline.bindPopup("<b>Wilderness Side Trail</b><p>High Falls<br>");
+                polyline.bindPopup("<b>Wilderness Side Trail</b><br>High Falls<br>");
 
 
 
@@ -3134,7 +3138,7 @@ var circledotWildernessStart = L.circle([44.8068830, -78.8132760], {
             ];
     
         var polyline = L.polyline(latlngs, {color: 'orange', weight: 4}).addTo(map);
-        polyline.bindPopup("<b>Wilderness Side Trail</b><p>Fire Tower Loop<br>");
+        polyline.bindPopup("<b>Wilderness Side Trail</b><br>Fire Tower Loop<br>");
 
 
 
@@ -3418,7 +3422,7 @@ var circledotWildernessStart = L.circle([44.8068830, -78.8132760], {
                 ];
 
         var polyline = L.polyline(latlngs, {color: 'teal', weight: 4}).addTo(map);
-        polyline.bindPopup("<b>Wilderness Side Trail</b><p>Devil's Lake<br>");
+        polyline.bindPopup("<b>Wilderness Side Trail</b><br>Devil's Lake<br>");
 
 
 
@@ -3803,7 +3807,7 @@ var circledotWildernessStart = L.circle([44.756539, -79.15518], {
         ];
 
             var polyline = L.polyline(latlngs, {color: 'chocolate', weight: 4}).addTo(map);
-            polyline.bindPopup("<b>Orillia</b><p>Orillia Side Trail<br>");
+            polyline.bindPopup("<b>Orillia</b><br>Orillia Side Trail<br>");
 
 
 
@@ -5923,4 +5927,3 @@ BarrieDist4.bindPopup("<b>KM 16.0</b><br>Horseshoe Valley Rd & Penetanguishene R
 
 </script>
 </html>
-
