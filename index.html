@@ -140,6 +140,76 @@ function onMapClick(e) {
 
 map.on('click', onMapClick);
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Very cool SEARCH button.
+// However, it only works on OSM features, NOT on any data I add, unfortunately. 
+// Also, the SEARCH default targets UK/Europe/USA names before considering Ontario. 
+// There is a workaround. If searching for a specific street or business,
+// just add the town name too. If that doesn't work, then also add "Ontario". 
+// For example:
+// Search: "Memorial Av" will take you to London, England
+// However, if your intent is to search for Memorial Av in Orillia,
+// then Search: "Memorial Av Orillia" will take you there. 
+// 
+
+    
+        // Create custom search button control
+        const searchControl = L.Control.extend({
+            options: { position: 'topleft' },
+            onAdd: function () {
+                const container = L.DomUtil.create('div', 'leaflet-control-custom');
+                container.innerHTML = '🔍 Search';
+                container.style.fontSize = '14px';
+                container.style.fontWeight = 'bold';
+                container.style.textAlign = 'center';
+
+                container.onclick = function () {
+                    const query = prompt("Enter a location to search:");
+                    if (query && query.trim() !== "") {
+                        searchLocation(query.trim());
+                    }
+                };
+
+                return container;
+            }
+        });
+
+        map.addControl(new searchControl());
+
+        // Function to search location using Nominatim API
+        function searchLocation(query) {
+            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`;
+
+            fetch(url, { headers: { 'User-Agent': 'LeafletSearchExample/1.0' } })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        const lat = parseFloat(data[0].lat);
+                        const lon = parseFloat(data[0].lon);
+
+                        // Add marker
+                        L.marker([lat, lon])
+                            .addTo(map)
+                            .bindPopup(`<b>${query}</b><br>Lat: ${lat.toFixed(6)}, Lng: ${lon.toFixed(6)}`)
+                            .openPopup();
+
+                        // Zoom to location
+                        map.setView([lat, lon], 14);
+
+                        console.log("Latitude:", lat, "Longitude:", lon);
+                    } else {
+                        alert("Location not found.");
+                    }
+                })
+                .catch(err => {
+                    console.error("Error fetching location:", err);
+                    alert("Error searching location.");
+                });
+        }
+
+
+// GHTA TRAIL NETWORK:
 
 // TRAILHEADS SHOWING THE START OF EACH CLUB TRAIL AND INTERESTING INFORMATION ABOUT THAT SECTION.
 // THERE ARE 10 MAIN TRAILS:
@@ -186,7 +256,7 @@ var circleOrilliaStart = L.circle([44.756539, -79.15518], {
     radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
-circleOrilliaStart.bindPopup("<h3>Orillia Start</h3><p>44.7565423, -79.1551879<p>The Orillia section starts at Sadowa and ends after almost 70 kilometres at Oro Medonte Line 6N in Sugarbush Estates south of Horseshoe Valley Road. From Sadowa to Atherley the trail is primarily on country roads, mostly quite peaceful and scenic. The trail then skirts the shore of Lake Couchiching and runs along the Lightfoot Trail system through the City of Orillia following the Mariposa Trail. It heads south to cross under Highway 11 and through Scout Valley west of the highway. This area is picturesque and suitable for novices. It then runs west on roads turning north and finally east through fields and woods. Overall, the trail is mostly flat and presents a variety of hiking locales from lakeside parks to rural woodlands.");
+circleOrilliaStart.bindPopup("<h3>Orillia Start</h3><p>44.7565423, -79.1551879<p>The Orillia section starts at Sadowa and ends after almost 70 kilometres at Oro Medonte Line 6N in Sugarbush Estates south of Horseshoe Valley Road. From Sadowa to Atherley the trail is primarily on country roads, mostly quite peaceful and scenic. The trail then skirts the shore of Lake Couchiching and runs along the Lightfoot Trail system through the City of Orillia following the Mariposa Trail. It heads south to cross under Highway 11 and through Scout Valley west of the highway. This area is picturesque and suitable for novices. It then runs west on roads turning north and finally east through fields and woods. Overall, the trail is mostly flat and presents a variety of hiking locales from lakeside parks to rural woodlands<p>For more detailed trail information:<a href='https://ganaraska-hiking-trail.org/wp-content/uploads/2025/11/Orillia-Trail-Guide-Description-20251123.pdf'><br>Orillia Trail Guide</a>");
   
     
 var circleBarrieStart = L.circle([44.5553241,-79.6189653], { 
@@ -196,7 +266,7 @@ var circleBarrieStart = L.circle([44.5553241,-79.6189653], {
     radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
-circleBarrieStart.bindPopup("<h3>Barrie Start</h3><p>44.555427, -79.618947<p>The Barrie section provides a variety of hiking experiences and goes through many Simcoe County Forest tracts, Copeland Forest, Springwater Provincial Park and Minesing Wetlands. There is some road walking, some rail trail walking, and lots of forest trails. Both novice and experienced hikers will find something to enjoy. Approx. 50 kms.</p>");
+circleBarrieStart.bindPopup("<h3>Barrie Start</h3><p>44.555427, -79.618947<p>The Barrie section provides a variety of hiking experiences and goes through many Simcoe County Forest tracts, Copeland Forest, Springwater Provincial Park and Minesing Wetlands. There is some road walking, some rail trail walking, and lots of forest trails. Both novice and experienced hikers will find something to enjoy. Approx. 50 kms.</p>For more detailed trail information:<a href= 'https://ganaraska-hiking-trail.org/wp-content/uploads/2023/11/Trail-Guide-Description-Barrie-20231026.pdf'><br>Barrie Trail Guide</a>");
 
 
 var circleMadRiverStart = L.circle([44.340345, -79.84295], { 
@@ -322,6 +392,20 @@ circleOroMedonteStart.bindPopup("<h3>Oro-Medonte Trail Start</h3><p>Gentle undul
     
     var parkingBarrie1icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
          L.marker([44.556160, -79.620057],{icon:parkingBarrie1icon}).addTo(map).bindPopup("Parking is accessed from Diamond Valley Dr for ~ 5 vehicles by the side of the road.");
+
+
+
+    // Points of Interest (POI):
+
+    var pointofinterestKawartha1icon = L.icon({iconUrl: 'poi.png', iconSize: [20, 20]});
+         L.marker([44.357004, -78.735594],{icon:pointofinterestKawartha1icon}).addTo(map).bindPopup("Lock 33 <b>Trent Severn Waterway</b> has benches, picnic tables, & washrooms");
+
+
+
+    var pointofinterestPineRide1icon = L.icon({iconUrl: 'poi.png', iconSize: [20, 20]});
+         L.marker([43.976988,-78.332168],{icon:pointofinterestPineRide1icon}).addTo(map).bindPopup("<b>Northumberland Hills Drumlins</b><br>Drumlins are elongated, oval-shaped mounds of glacial till deposited and shaped beneath advancing ice sheets during the last ice age.");
+
+
 
 
 
@@ -5372,7 +5456,7 @@ var latlngs = [
 ];
 
 var polyline = L.polyline(latlngs, {color: 'darkorange', weight: 6}).addTo(map);
-polyline.bindPopup("<b>Tiny Main Trail</b><br>");
+polyline.bindPopup("<b>Midland Main Trail</b><br>");
 
 
 // Placed here so dot covers both Tiny & Midland trails. :)
@@ -5770,9 +5854,9 @@ var Amoscoords = [
     //fillColor: '#00BFFF0',
     fillOpacity: 1,
     weight: 10,
-    radius: 15,
+    radius: 20,
 }).addTo(map);
-OrilliaDist1.bindPopup("<b>KM 5.3</b><br>").addTo(map);
+OrilliaDist1.bindPopup("<b>KM 5.3</b><br>Junction at Head River").addTo(map);
 
 
     var OrilliaDist2 = L.circle([44.669041, -79.149885], { 
@@ -5780,9 +5864,9 @@ OrilliaDist1.bindPopup("<b>KM 5.3</b><br>").addTo(map);
     //fillColor: '#00BFFF0',
     fillOpacity: 1,
     weight: 10,
-    radius: 15,
+    radius: 20,
 }).addTo(map);
-OrilliaDist2.bindPopup("<b>KM 11.9</b><br>").addTo(map);
+OrilliaDist2.bindPopup("<b>KM 11.9</b><br>Junction at Kirkfield Rd").addTo(map);
 
 
     var OrilliaDist3 = L.circle([44.660958, -79.186397], { 
@@ -5790,12 +5874,49 @@ OrilliaDist2.bindPopup("<b>KM 11.9</b><br>").addTo(map);
     //fillColor: '#00BFFF0',
     fillOpacity: 1,
     weight: 10,
+    radius: 20,
+}).addTo(map);
+OrilliaDist3.bindPopup("<b>KM 14.9</b><br>Junction at CON 13").addTo(map);
+
+
+ var BarrieDist1 = L.circle([44.5553241,-79.6189653], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+BarrieDist1.bindPopup("<b>KM 0.0</b><br>Start at NE corner of Johnson Forest Tract<br>44.5553, -79.6189").addTo(map);   
+
+
+var BarrieDist2 = L.circle([44.55388, -79.638787], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
     radius: 15,
 }).addTo(map);
-OrilliaDist3.bindPopup("<b>KM 14.9</b><br>").addTo(map);
+BarrieDist2.bindPopup("<b>KM 3.0</b><br>Junction at Line 5 N").addTo(map);
 
 
+    var BarrieDist3 = L.circle([44.577691, -79.677842], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 15,
+}).addTo(map);
+BarrieDist3.bindPopup("<b>KM 7.7</b><br>Junction at Sign Post 11").addTo(map);
 
+
+   var BarrieDist4 = L.circle([44.52954, -79.72569], { 
+    color: 'black',
+    //fillColor: 'wh#FFFFFF',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 15,
+}).addTo(map);
+BarrieDist4.bindPopup("<b>KM 16.0</b><br>Horseshoe Valley Rd & Penetanguishene Rd").addTo(map);
 
 
 
