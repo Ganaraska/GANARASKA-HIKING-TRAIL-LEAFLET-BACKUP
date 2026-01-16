@@ -48,6 +48,8 @@
     
 </body>
 
+
+
 <script>
 
 var map = L.map('map');
@@ -86,10 +88,10 @@ var CycleOSM = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z
 });
 
 var baseMaps = {
-    "OpenStreetMap": osm,
-    "OpenTopoMap": otm,
-    "OpenStreetMap_Alt": osm_HOT,
-    "OSM Cycle & Trans-Canada-Tral": CycleOSM
+    "OpenStreetMap (Standard)": osm,
+    "OpenStreetMap (Alt)": osm_HOT,
+    "OSM Cycle/Hiking (TCT & Contours)": CycleOSM,
+    "OpenTopoMap (Contours)": otm,
 };
 
 L.control.layers(baseMaps).addTo(map);
@@ -124,42 +126,44 @@ updateWhenIdle: false // Update the scale bar on move
 // NAVIGATOR (https://www.youtube.com/watch?v=NyjMmNCtKf4)----------------------------------------------------------------
 
 
-navigator.geolocation.watchPosition(success, error);
+        navigator.geolocation.watchPosition(success, error);
 
-let marker, circle, zoomed;
+        let marker, circle, zoomed;
 
-function success(pos) {
+        function success(pos) {
 
-    const lat = pos.coords.latitude;
-    const lng = pos.coords.longitude;
-    const accuracy = pos.coords.accuracy;
+            const lat = pos.coords.latitude;
+            const lng = pos.coords.longitude;
+            const accuracy = pos.coords.accuracy;
 
-        if (marker) {
-                map.removeLayer(marker);
-                map.removeLayer(circle);
+                if (marker) {
+                        map.removeLayer(marker);
+                        map.removeLayer(circle);
 
-        }
+             }
 
-     marker = L.marker([lat, lng]).addTo(map);
-    circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);  // Original code.
+            marker = L.marker([lat, lng]).addTo(map);
+            circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);  // Original code.
     //circle = L.circle([lat, lng], { radius: accuracy, color: 'salmon' }).addTo(map);  // Added color to circle and it works! But, I'll keep it blue.
 
 
-        if (!zoomed) {
-        zoomed = map.fitBounds(circle.getBounds());
-    }
-
-    map.setView([lat, lng]);
-}
-
-function error(err) {
-
-            if (err.code === 1) {
-                alert("Please allow geolocation access.");
-            } else {
-                alert("Unable to get current location");
+                if (!zoomed) {
+                zoomed = map.fitBounds(circle.getBounds());
             }
-}
+
+            map.setView([lat, lng]);
+        }
+
+        function error(err) {
+
+                    if (err.code === 1) {
+                        alert("Please allow geolocation access.");
+                    } else {
+                        alert("Unable to get current location");
+                    }
+        }
+
+
 
 
 // Decimal Degrees on a click:------------------------------------------------------------------------------------------------
@@ -268,9 +272,13 @@ map.on('click', onMapClick);
 // THERE ARE 10 MAIN TRAILS:
 // PINE RIDGE, KAWARTHA, WILDERNESS, ORILLIA, BARRIE, MAD RIVER, WASAGA BEACH, TINY, MIDLAND, AND ORO-MEDONTE.
 
+
+
+
 // (Here's how to make circles with a specific radius and other attributes plus a popup bubble! 
 //     Note the new circle variable like 'circleOrilliaStart'
 //     and NOT just circle which gets confusing with the geocoding circle variable above).
+
 
 var circlePineRidgeStart = L.circle([43.949146, -78.292529], { 
     color: 'tomato',
@@ -309,8 +317,9 @@ var circleOrilliaStart = L.circle([44.756539, -79.15518], {
     radius: 300
 }).addTo(map);
 // Add this to create a popup for the 
-circleOrilliaStart.bindPopup("<h3>Orillia Start</h3><p>44.7565423, -79.1551879<p>The Orillia section starts at Sadowa and ends after almost 70 kilometres at Oro Medonte Line 6N in Sugarbush Estates south of Horseshoe Valley Road. From Sadowa to Atherley the trail is primarily on country roads, mostly quite peaceful and scenic. The trail then skirts the shore of Lake Couchiching and runs along the Lightfoot Trail system through the City of Orillia following the Mariposa Trail. It heads south to cross under Highway 11 and through Scout Valley west of the highway. This area is picturesque and suitable for novices. It then runs west on roads turning north and finally east through fields and woods. Overall, the trail is mostly flat and presents a variety of hiking locales from lakeside parks to rural woodlands<p>For more detailed trail information:<a href='https://ganaraska-hiking-trail.org/wp-content/uploads/2025/11/Orillia-Trail-Guide-Description-20251123.pdf'><br>Orillia Trail Guide</a>");
-  
+// (Version 1) circleOrilliaStart.bindPopup("<h3>Orillia Start</h3><p>44.7565423, -79.1551879<p>The Orillia section starts at Sadowa and ends after almost 70 kilometres at Oro Medonte Line 6N in Sugarbush Estates south of Horseshoe Valley Road. From Sadowa to Atherley the trail is primarily on country roads, mostly quite peaceful and scenic. The trail then skirts the shore of Lake Couchiching and runs along the Lightfoot Trail system through the City of Orillia following the Mariposa Trail. It heads south to cross under Highway 11 and through Scout Valley west of the highway. This area is picturesque and suitable for novices. It then runs west on roads turning north and finally east through fields and woods. Overall, the trail is mostly flat and presents a variety of hiking locales from lakeside parks to rural woodlands<p>For more detailed trail information:<a href=https://ganaraska-hiking-trail.org/wp-content/uploads/2025/11/Orillia-Trail-Guide-Description-20251123.pdf'><br>Orillia Trail Guide</a>");
+ circleOrilliaStart.bindPopup('<a href="https://ganaraska-hiking-trail.org/wp-content/uploads/2025/11/Orillia-Trail-Guide-Description-20251123.pdf" target="_blank"><h4>Orillia Trail Guide</h4></a><p><b><h3>Orillia Start</h3></b><p>44.7565423, -79.1551879<p>The Orillia section starts at Sadowa and ends after almost 70 kilometres at Oro Medonte Line 6N in Sugarbush Estates south of Horseshoe Valley Road. From Sadowa to Atherley the trail is primarily on country roads, mostly quite peaceful and scenic. The trail then skirts the shore of Lake Couchiching and runs along the Lightfoot Trail system through the City of Orillia following the Mariposa Trail. It heads south to cross under Highway 11 and through Scout Valley west of the highway. This area is picturesque and suitable for novices. It then runs west on roads turning north and finally east through fields and woods. Overall, the trail is mostly flat and presents a variety of hiking locales from lakeside parks to rural woodlands.');
+ 
     
 var circleBarrieStart = L.circle([44.5553241,-79.6189653], { 
     color: 'purple',
@@ -844,7 +853,9 @@ circleOroMedonteStart.bindPopup("<h3>Oro-Medonte Trail Start</h3><p>Gentle undul
 ];
 
 var polyline = L.polyline(latlngs, {color: 'tomato', weight: 6}).addTo(map);
-polyline.bindPopup("<b>Pine Ridge Trail</b><br>");
+//polyline.bindPopup("<b>Pine Ridge Trail</b><br>");
+polyline.bindPopup('<a href="https://www.pineridgehikingclub.ca//" target="_blank">www.pineridgehikingclub.ca</a><p><b>Pine Ridge Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
+
 
 
                 // Pine Ridge - Ganaraska Forest Bypass Side Trail
@@ -907,7 +918,7 @@ var latlngs = [
 ];
 
     var polyline = L.polyline(latlngs, {color: 'crimson', weight: 5}).addTo(map);
-    polyline.bindPopup("<b>Pine Ridge</b><br>Ganaraska Forest Bypass Side Trail");
+    //polyline.bindPopup("<b>Pine Ridge</b><br>Ganaraska Forest Bypass Side Trail"); (Original)
 
 
 
@@ -1317,7 +1328,10 @@ var circledotPineRidgeStart = L.circle([43.949146, -78.292529], {
 ];
 
 var polyline = L.polyline(latlngs, {color: 'green', weight: 6}).addTo(map);
-polyline.bindPopup("<b>Kawartha Main Trail</b><br>");
+polyline.bindPopup('<a href="https://www.facebook.com/kawarthahikingclub" target="_blank">www.facebook.com/kawarthahikingclub</a><p><b>Kawartha Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
+
+    //polyline.bindPopup('<a href="https://www.facebook.com/GHTAOrillia/" target="_blank">www.facebook.com/GHTAOrillia</a><p><b>Orillia Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
+
 
 var circledotKawarthStart = L.circle([44.2919050, -78.6308860], { 
     color: 'green',
@@ -2392,7 +2406,10 @@ var latlngs = [
 ];
 
 var polyline = L.polyline(latlngs, {color: 'steelblue', weight: 6}).addTo(map);
-polyline.bindPopup("<b>Wilderness Main Trail</b><br>");
+// polyline.bindPopup("<b>Wilderness Main Trail</b><br>");
+
+    polyline.bindPopup('<a href="https://www.facebook.com/GHTAwilderness/" target="_blank">www.facebook.com/GHTAwilderness</a><p><b>Wilderness Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
+
 
 var circledotWildernessStart = L.circle([44.8068830, -78.8132760], { 
     color: 'steelblue',
@@ -3893,7 +3910,7 @@ var latlngs = [
 ];
 
 var Orilliapolyline = L.polyline(latlngs, {color: 'orange', weight: 6}).addTo(map);
-//Orilliapolyline.bindPopup("<b>Orillia Main Trail</b><p>"); //This is the original popup.
+//Orilliapolyline.bindPopup("<b>Orillia Main Trail</b><p>"); //This is the original popup. (Original)
     Orilliapolyline.bindPopup('<a href="https://www.facebook.com/GHTAOrillia/" target="_blank">www.facebook.com/GHTAOrillia</a><p><b>Orillia Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
 
 
@@ -4543,9 +4560,9 @@ var circledotWildernessStart = L.circle([44.756539, -79.15518], {
 ];
 
         // Interesting that I can call this one "Barriepolyline" and all the others are just "polyline" and it all works. Hmm...
-var Barriepolyline = L.polyline(latlngs, {color: 'purple', weight: 6}).addTo(map);
-        //Barriepolyline.bindPopup("<b>Barrie Main Trail</b><br>");
-            Barriepolyline.bindPopup('<a href="https://www.facebook.com/GHTAbarrie" target="_blank">www.facebook.com/GHTABarrie</a><p><b>Barrie Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
+    var Barriepolyline = L.polyline(latlngs, {color: 'purple', weight: 6}).addTo(map);
+        //Barriepolyline.bindPopup("<b>Barrie Main Trail</b><br>"); (Original)
+        Barriepolyline.bindPopup('<a href="https://www.facebook.com/GHTAbarrie" target="_blank">www.facebook.com/GHTABarrie</a><p><b>Barrie Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
 
 
 var circledotBarrieStart = L.circle([44.5553241,-79.6189653], { 
@@ -5236,7 +5253,9 @@ var latlngs = [
 ];
 
 var polyline = L.polyline(latlngs, {color: 'mediumseagreen', weight: 6}).addTo(map);
-polyline.bindPopup("<b>Mad River Main Trail</b><br>");
+// polyline.bindPopup("<b>Mad River Main Trail</b><br>"); (Original)
+polyline.bindPopup('<a href="https://www.facebook.com/mrht18" target="_blank">www.facebook.com/mrht18</a><p><b>Mad River Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
+
 
 var circledotMadRiverStart = L.circle([44.3402840, -79.8428310], { 
     color: 'mediumseagreen',
@@ -5574,7 +5593,10 @@ var latlngs = [
 ];
 
 var polyline = L.polyline(latlngs, {color: 'mediumvioletred', weight: 6}).addTo(map);
-polyline.bindPopup("<b>Wasaga Beach Main Trail</b><br>");
+// polyline.bindPopup("<b>Wasaga Beach Main Trail</b><br>"); (Orilinal)
+// polyline.bindPopup('<a href="https://www.instagram.com/hiking_the_ganaraska_ontario" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario</a><p><b>Wasaga Beach Main Trail</b>');
+// polyline.bindPopup('<a href="https://www.facebook.com/mrht18" target="_blank">www.facebook.com/mrht18</a><p><b>Mad River Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
+polyline.bindPopup('<a href="https://www.facebook.com/groups/ganaraskahikingtrailgroup" target="_blank">www.facebook.com/groups/ganaraskahikingtrailgroup</a><p><b>Wasaga Beach Main Trail</b>');
 
 
 // TINY MAIN TRAIL
@@ -5668,7 +5690,9 @@ var latlngs = [
 ];
 
 var polyline = L.polyline(latlngs, {color: 'teal', weight: 6}).addTo(map);
-polyline.bindPopup("<b>Tiny Main Trail</b><br>");
+// polyline.bindPopup("<b>Tiny Main Trail</b><br>"); // (Original)
+polyline.bindPopup('<a href="https://www.facebook.com/groups/ganaraskahikingtrailgroup" target="_blank">www.facebook.com/groups/ganaraskahikingtrailgroup</a><p><b>Tiny Main Trail</b>');
+
 
 // Put this here so dot covers Tiny trail end. Thumbs up! :)
 var circledotWasagaBeachStart = L.circle([44.5653190, -79.9945310], { 
@@ -6102,7 +6126,9 @@ var latlngs = [
 ];
 
 var polyline = L.polyline(latlngs, {color: 'darkorange', weight: 6}).addTo(map);
-polyline.bindPopup("<b>Midland Main Trail</b><br>");
+// polyline.bindPopup("<b>Midland Main Trail</b><br>"); // (Original)
+    polyline.bindPopup('<a href="https://www.facebook.com/GHTAMidland" target="_blank">www.facebook.com/GHTAMidland</a><p><b>Midland Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
+
 
 
             // Midland - Charlebois East Side Trail
@@ -6291,10 +6317,12 @@ var latlngs = [
 ];
 
 var polyline = L.polyline(latlngs, {color: 'deepskyblue', weight: 6}).addTo(map);
-polyline.bindPopup("<b>Oro-Medonte Main Trail</b><br>");
+// polyline.bindPopup("<b>Oro-Medonte Main Trail</b><br>"); // (Original)
+    polyline.bindPopup('<a href="https://www.facebook.com/GHTAOroMedonte" target="_blank">www.facebook.com/GHTAOroMedonte</a><p><b>Oro-Medonte Main Trail</b><p><a href="https://www.instagram.com/hiking_the_ganaraska_ontario/" target="_blank">www.instagram.com/hiking_the_ganaraska_ontario');
 
 
-// START DOTS IN CLUB COLOURS - ALLOWS FOR COORDINATE POPUPS!!
+
+// START-DOTS IN CLUB COLOURS - ALLOWS FOR COORDINATE POPUPS!!
 
 // Dot put here to cover both trails, but most are up top somehwhere :)
 var circledotOroMedonteStart = L.circle([44.5715436,-79.6745914], { 
@@ -6333,7 +6361,6 @@ var circledotMidlandStart = L.circle([44.6770280, -79.7416420], {
       [44.5468333,-79.5598415],
     ];
 
-    
     
     // Create polygon with custom colors
     var polygon = L.polygon(Breedoncoords, {
