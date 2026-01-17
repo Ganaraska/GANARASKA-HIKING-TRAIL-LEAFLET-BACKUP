@@ -485,10 +485,29 @@ circleOroMedonteStart.bindPopup('<a href="https://ganaraska-hiking-trail.org/wp-
     var parkingBarrie7icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
          L.marker([44.443834, -79.748532],{icon:parkingBarrie7icon}).addTo(map).bindPopup("There is parking at the <b>Museum</b>, as well as across the road at the County of Simcoe Administration building.");    
     
+    var parkingBarrie8icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.39425, -79.82031],{icon:parkingBarrie8icon}).addTo(map).bindPopup("Fort Willow Parking Lot (PAYMENT REQUIRED)."); 
     
+    var parkingBarrie9icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.39543, -79.80065],{icon:parkingBarrie9icon}).addTo(map).bindPopup("George Johnson Road parking lot beside Huronia Tract."); 
+
+    var parkingBarrie9icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.37877,-79.82517],{icon:parkingBarrie9icon}).addTo(map).bindPopup("Small parking lot by Miller Tract on west side of Pinegrove Rd."); 
     
+    //var parkingBarrie9icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         //L.marker([44.39425, -79.82031],{icon:parkingBarrie9icon}).addTo(map).bindPopup("NOT MENTIONED IN TRAIL GUID");        
+ 
+         
     
+    // PARKING MIDLAND
+
+    var parkingMidland1icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.6763656,-79.7410024],{icon:parkingMidland1icon}).addTo(map).bindPopup("There is limited parking on the shoulder of Reeves Road. Dogs are NOT allowed on this section at the request of the landowner who owns sheep."); 
     
+
+
+
+         
          // POI - Points-Of-Interest
 
     var pointofinterestKawartha1icon = L.icon({iconUrl: 'info-svgrepo-com.svg', iconSize: [25, 25]});
@@ -499,10 +518,16 @@ circleOroMedonteStart.bindPopup('<a href="https://ganaraska-hiking-trail.org/wp-
          L.marker([43.976988,-78.332168],{icon:pointofinterestPineRide1icon}).addTo(map).bindPopup("<b>Northumberland Hills Drumlins</b><br>Drumlins are elongated, oval-shaped mounds of glacial till deposited and shaped beneath advancing ice sheets during the last ice age.");
 
 
+    var pointofiterestBarrie1icon = L.icon({iconUrl: 'info-svgrepo-com.svg', iconSize: [25, 25]});
+         L.marker([44.547926, -79.675877],{icon:pointofiterestBarrie1icon}).addTo(map).bindPopup("Horseshoe Valley Ski Resort");
+
+    var pointofiterestBarrie2icon = L.icon({iconUrl: 'info-svgrepo-com.svg', iconSize: [25, 25]});
+         L.marker([44.409808, -79.791043],{icon:pointofiterestBarrie2icon}).addTo(map).bindPopup("Snow Valley Ski Resort");
 
 
 
-                // BELOW IS THE GANARASKA HIKING TRAIL NETWORK IN DECIMAL DEGREES FOR EACH VERTEX (GPX POINT). 
+
+         // BELOW IS THE GANARASKA HIKING TRAIL NETWORK IN DECIMAL DEGREES FOR EACH VERTEX (GPX POINT). 
                 // EACH TRAIL HAS BEEN SIMPLIFIED TO REMOVE REDUNDANT POINTS TO REDUCE THE NUMBER OF COORDINATE PAIRS.
                 // IN SOME CASES, THE ORIGINAL GPX TRAIL CONTAINED OVER 4,000 POINTS, BUT WAS REDUCED TO 500 TO 1,000 POINTS. 
 
@@ -6368,6 +6393,7 @@ var circledotMidlandStart = L.circle([44.6770280, -79.7416420], {
     // SIMCOE COUNTY FOREST TRACTS... ONE AT A TIME... GOOD GRIEF & LOL!! .)
     // I start capturing coordinates at the NW corner and work clockwise. 
 
+            // BARRIE SIMCOE COUNTY FORESTS
 
 // Define polygon coordinates for Simcoe County Forest Tracts
     var Breedoncoords = [
@@ -6596,6 +6622,103 @@ var Amoscoords = [
     polygon.bindPopup("Simcoe County Forest - <b>Amos Tract</b><p>");
 
 
+            // MIDLAND SIMCOE COUNTY FORESTS
+
+    var ThompsonWestcoords = [
+      [44.7516099,-79.9633007],
+      [44.7559117,-79.9537078],
+      [44.7527381,-79.9509373], //SE Corner
+      [44.7485354,-79.9604642],
+      
+    ];
+    
+    var polygon = L.polygon(ThompsonWestcoords, {
+      color: 'salmon',       // Border color
+      weight: 2,           // Border thickness
+      fillColor: 'salmon', // Fill color
+      fillOpacity: 0.5     // Fill transparency
+    }).addTo(map);
+
+    polygon.bindPopup("Simcoe County Forest - <b>Thompson West Tract</b><p>");
+
+
+var ThompsonEastcoords = [
+      [44.7556044,-79.9531287],
+      [44.7581205,-79.9475487],
+      [44.75879224,-79.94812951],
+      [44.7611733,-79.9426290],
+      [44.7574506,-79.9393831],
+      [44.7525395,-79.9504602],
+    ];
+    
+    var polygon = L.polygon(ThompsonEastcoords, {
+      color: 'salmon',       // Border color
+      weight: 2,           // Border thickness
+      fillColor: 'salmon', // Fill color
+      fillOpacity: 0.5     // Fill transparency
+    }).addTo(map);
+
+    polygon.bindPopup("Simcoe County Forest - <b>Thompson East Tract</b><p>");
+
+   var Charleboiscoords = [
+      [44.7485269,-79.9604679],
+      [44.7527344,-79.9509383],
+      [44.7464693,-79.9454615],
+      [44.7420662,-79.9549763],
+    ];
+    
+    var polygon = L.polygon(Charleboiscoords, {
+      color: 'salmon',       // Border color
+      weight: 2,           // Border thickness
+      fillColor: 'salmon', // Fill color
+      fillOpacity: 0.5     // Fill transparency
+    }).addTo(map);
+
+    polygon.bindPopup("Simcoe County Forest - <b>Charlebois Tract</b><p>"); 
+
+
+ var MartinsValleycoords = [
+      [44.7525395,-79.9504602],
+      [44.7574637,-79.9393494],
+      [44.7527454,-79.9352862],
+      [44.7530936,-79.9344703],
+      [44.7515689,-79.9331234], // Start of thin line
+      [44.7527613,-79.9304536],
+      [44.7528318,-79.9304926],
+      [44.75330044,-79.92935483],
+      [44.75370792,-79.92928521],
+      [44.75423939,-79.92804411],
+      [44.7549610,-79.9279154],    // NW Corner of little "Knob" LOL!! :)
+      [44.75496732,-79.92748908],
+      [44.7543954,-79.9275835],
+      [44.7536868,-79.9292408],
+      [44.7532786,-79.9293039],
+      [44.7528157,-79.9304352],
+      [44.7527498,-79.9303999],
+      [44.7510540,-79.9341935],
+      [44.7495047,-79.9328124],
+      [44.7446957,-79.9435866],
+    ];
+    
+    var polygon = L.polygon(MartinsValleycoords, {
+      color: 'salmon',       // Border color
+      weight: 2,           // Border thickness
+      fillColor: 'salmon', // Fill color
+      fillOpacity: 0.5     // Fill transparency
+    }).addTo(map);
+
+    polygon.bindPopup("Simcoe County Forest - <b>Martin's Valley Tract</b><p>"); 
+
+
+// Dot put here to cover both trails, but most are up top somehwhere :)
+var circledotTinyStart = L.circle([44.7499988,-79.9602955], { 
+    color: 'teal',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+
 
 
         // DISTANCE MARKERS:
@@ -6631,6 +6754,125 @@ OrilliaDist2.bindPopup("<b>KM 11.9</b><br>Junction at Kirkfield Rd").addTo(map);
 }).addTo(map);
 OrilliaDist3.bindPopup("<b>KM 14.9</b><br>Junction at CON 13").addTo(map);
 
+var OrilliaDist4 = L.circle([44.657089, -79.204378], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+OrilliaDist4.bindPopup("<b>KM 16.4</b><br>Trail heads SW").addTo(map);
+
+var OrilliaDist5 = L.circle([44.628787, -79.276789], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+OrilliaDist5.bindPopup("<b>KM 23.5</b><br>").addTo(map);
+
+var OrilliaDist6 = L.circle([44.61684, -79.271734], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+OrilliaDist6.bindPopup("<b>KM 24.8</b><br>").addTo(map);
+
+var OrilliaDist7 = L.circle([44.599467, -79.351358], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+OrilliaDist7.bindPopup("<b>KM 31.5</b><br>").addTo(map);
+
+var OrilliaDist8 = L.circle([44.606651, -79.376929], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+OrilliaDist8.bindPopup("<b>KM 33.9</b><br>").addTo(map);
+
+var OrilliaDist9 = L.circle([44.609221, -79.41028], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 5,
+}).addTo(map);
+OrilliaDist9.bindPopup("<b>KM 37.5</b><br>").addTo(map);
+
+var OrilliaDist10 = L.circle([44.592501, -79.421263], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 5,
+}).addTo(map);
+OrilliaDist10.bindPopup("<b>KM 40.0</b><br>").addTo(map);
+
+var OrilliaDist11 = L.circle([44.571485, -79.428257], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 5,
+}).addTo(map);
+OrilliaDist11.bindPopup("<b>KM 42.5</b><br>").addTo(map);
+
+var OrilliaDist12 = L.circle([44.573652, -79.470549], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+OrilliaDist12.bindPopup("<b>KM 49.4</b><br>").addTo(map);
+
+var OrilliaDist13 = L.circle([44.560913, -79.500493], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+OrilliaDist13.bindPopup("<b>KM 52.2</b><br>").addTo(map);
+
+var OrilliaDist14 = L.circle([44.540881, -79.543634], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+OrilliaDist14.bindPopup("<b>KM 57.8</b><br>").addTo(map);
+
+var OrilliaDist15 = L.circle([44.539346, -79.575240], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+OrilliaDist15.bindPopup("<b>KM 62.4</b><br>").addTo(map);
+
+var OrilliaDist16 = L.circle([44.552925, -79.609037], { 
+    color: 'black',
+    //fillColor: '#00BFFF0',
+    fillOpacity: 1,
+    weight: 10,
+    radius: 20,
+}).addTo(map);
+OrilliaDist16.bindPopup("<b>KM 67.5</b><br>").addTo(map);
+
+
+// BARRIE 
 
  var BarrieDist1 = L.circle([44.5553241,-79.6189653], { 
     color: 'black',
@@ -6670,6 +6912,12 @@ BarrieDist3.bindPopup("<b>KM 7.7</b><br>Junction at Sign Post 11").addTo(map);
     radius: 15,
 }).addTo(map);
 BarrieDist4.bindPopup("<b>KM 16.0</b><br>Horseshoe Valley Rd & Penetanguishene Rd").addTo(map);
+
+
+
+
+
+
 
 
 
