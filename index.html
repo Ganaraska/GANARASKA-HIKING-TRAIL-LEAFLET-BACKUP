@@ -401,6 +401,23 @@ circleOroMedonteStart.bindPopup('<a href="https://ganaraska-hiking-trail.org/wp-
 
     // Hazard Symbols
 
+    var hazardWilderness1icon = L.icon({iconUrl: 'hazard-sign-on-transparent-background.png', iconSize: [30, 30]});
+        L.marker([44.825848, -78.812276],{icon:hazardWilderness1icon}).addTo(map).bindPopup("Beaver Dam");
+
+    var hazardWilderness2icon = L.icon({iconUrl: 'hazard-sign-on-transparent-background.png', iconSize: [30, 30]});
+        L.marker([44.85908, -78.832701],{icon:hazardWilderness2icon}).addTo(map).bindPopup("Very difficult water crossing");
+
+    var hazardWilderness3icon = L.icon({iconUrl: 'hazard-sign-on-transparent-background.png', iconSize: [30, 30]});
+        L.marker([44.861116, -78.908734],{icon:hazardWilderness3icon}).addTo(map).bindPopup("Very difficult water crossing");
+
+    var hazardWilderness4icon = L.icon({iconUrl: 'hazard-sign-on-transparent-background.png', iconSize: [30, 30]});
+        L.marker([44.847342, -79.026429],{icon:hazardWilderness4icon}).addTo(map).bindPopup("Very difficult water crossing");
+
+    var hazardWilderness5icon = L.icon({iconUrl: 'hazard-sign-on-transparent-background.png', iconSize: [30, 30]});
+        L.marker([44.829935, -79.058466],{icon:hazardWilderness5icon}).addTo(map).bindPopup("Difficult water crossing");      
+
+
+
     var hazardOrillia1icon = L.icon({iconUrl: 'hazard-sign-on-transparent-background.png', iconSize: [30, 30]});
         L.marker([44.574112, -79.443803],{icon:hazardOrillia1icon}).addTo(map).bindPopup("Dangerous X-ing at Hwy 11 & Memorial Av");
 
@@ -416,9 +433,26 @@ circleOroMedonteStart.bindPopup('<a href="https://ganaraska-hiking-trail.org/wp-
     var hazardOroMedonte1icon = L.icon({iconUrl: 'hazard-sign-on-transparent-background.png', iconSize: [30, 30]});
         L.marker([44.583382, -79.68281],{icon:hazardOroMedonte1icon}).addTo(map).bindPopup("DANGEROUS RAILWAY X-ING");
 
-    
-    
-    
+    var hazardMidland1icon = L.icon({iconUrl: 'hazard-sign-on-transparent-background.png', iconSize: [30, 30]});
+        L.marker([44.729669, -79.802372],{icon:hazardMidland1icon}).addTo(map).bindPopup("DANGEROUS X-ING OVER HWY 12 <br>(a.k.a. Isobel's Crossing .)");  
+
+   
+        
+        // Parking WILDERNESS
+
+    var parkingWilderness1icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+        L.marker([44.806185,-78.813349],{icon:parkingWilderness1icon}).addTo(map).bindPopup("Parking availale along Country Rd. This marks the end of the <b>Kawartha</b> trail and the beginning of the <b>Wilderness</b> trail.");
+
+    var parkingWilderness2icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+        L.marker([44.859436, -78.815888],{icon:parkingWilderness2icon}).addTo(map).bindPopup("There's a parking lot by Devil's Lake Road & Deep Bay Road.");
+
+    var parkingWilderness3icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+        L.marker([44.83309, -79.06096],{icon:parkingWilderness3icon}).addTo(map).bindPopup("Parking available along Black River Rd by Victoria Bridge.");
+
+
+
+
+
     
         // Parking ORILLIA
 
@@ -493,30 +527,51 @@ circleOroMedonteStart.bindPopup('<a href="https://ganaraska-hiking-trail.org/wp-
 
     var parkingBarrie9icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
          L.marker([44.37877,-79.82517],{icon:parkingBarrie9icon}).addTo(map).bindPopup("Small parking lot by Miller Tract on west side of Pinegrove Rd."); 
-    
+
     //var parkingBarrie9icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-         //L.marker([44.39425, -79.82031],{icon:parkingBarrie9icon}).addTo(map).bindPopup("NOT MENTIONED IN TRAIL GUID");        
+         //L.marker([44.39425, -79.82031],{icon:parkingBarrie9icon}).addTo(map).bindPopup("NOT MENTIONED IN TRAIL GUIDE");        
  
          
     
     // PARKING MIDLAND
 
     var parkingMidland1icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
-         L.marker([44.6763656,-79.7410024],{icon:parkingMidland1icon}).addTo(map).bindPopup("There is limited parking on the shoulder of Reeves Road. Dogs are NOT allowed on this section at the request of the landowner who owns sheep."); 
+         L.marker([44.677363,-79.741924],{icon:parkingMidland1icon}).addTo(map).bindPopup("There is limited parking on the shoulder of Reeves Road. <b>Dogs are NOT allowed</b> on this section at the request of the landowner who owns sheep."); 
     
+    var parkingMidland2icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.705068, -79.751699],{icon:parkingMidland2icon}).addTo(map).bindPopup("Hogg Valley Road has roadside parking. <b>Please do NOT block the gate</b>."); 
 
+    var parkingMidland3icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.72085, -79.768405],{icon:parkingMidland3icon}).addTo(map).bindPopup("There is limited parking here on the shoulder. <b>Please do NOT block the entrances to the snowmobile trail</b>."); 
 
+    var parkingMidland4icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.736689, -79.846243],{icon:parkingMidland4icon}).addTo(map).bindPopup("<b>Sainte Marie Park</b> parking lot north side of HWY 12 on the east side of Wye Valley Rd has plenty of parking (not to be confused with Sainte Marie Among the Hurons parking lot, which is on the SE side of the Wye River & Hwy 12)."); 
 
-         
+    var parkingMidland5icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.759095, -79.878471],{icon:parkingMidland5icon}).addTo(map).bindPopup("<b>Small parking lot</b> for approximately 8 cars on the west side of Aberdeen Blvd., but only park on the south side of the office buildings."); 
+
+    var parkingMidland6icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.752071, -79.88803],{icon:parkingMidland6icon}).addTo(map).bindPopup("<b>Downtown Midland & Harbour</b>. Municipal parking lot is currently free, but this may change. Washrooms at the Harbour Master building during the summer months (Victoria Day to Thanksgiving). Restaurants, groceries, coffee shops, etc.");
+
+    var parkingMidland7icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.755152, -79.898802],{icon:parkingMidland7icon}).addTo(map).bindPopup("Large parking lot at <b>Pete Pettersen Park</b> with its beach, boat launch, playground, baseball field, and views of Georgian Bay, as well as Bayport Marina and the Midland Sailing Club. Lots of free parking!");
+
+    var parkingMidland8icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.759686, -79.903249],{icon:parkingMidland8icon}).addTo(map).bindPopup("Parking at Corner of Harbourview & Sunnyside.");
+
+    var parkingMidland9icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.74367, -79.956463],{icon:parkingMidland9icon}).addTo(map).bindPopup("New large parking lot");
+
+    var parkingMidland10icon = L.icon({iconUrl: 'Parking.png', iconSize: [25, 25]});
+         L.marker([44.74479, -79.94370],{icon:parkingMidland10icon}).addTo(map).bindPopup("Parking on Wilson Road");
+
          // POI - Points-Of-Interest
 
     var pointofinterestKawartha1icon = L.icon({iconUrl: 'info-svgrepo-com.svg', iconSize: [25, 25]});
          L.marker([44.357004, -78.735594],{icon:pointofinterestKawartha1icon}).addTo(map).bindPopup("Lock 33 <b>Trent Severn Waterway</b> has benches, picnic tables, & washrooms");
 
-
     var pointofinterestPineRide1icon = L.icon({iconUrl: 'info-svgrepo-com.svg', iconSize: [25, 25]});
          L.marker([43.976988,-78.332168],{icon:pointofinterestPineRide1icon}).addTo(map).bindPopup("<b>Northumberland Hills Drumlins</b><br>Drumlins are elongated, oval-shaped mounds of glacial till deposited and shaped beneath advancing ice sheets during the last ice age.");
-
 
     var pointofiterestBarrie1icon = L.icon({iconUrl: 'info-svgrepo-com.svg', iconSize: [25, 25]});
          L.marker([44.547926, -79.675877],{icon:pointofiterestBarrie1icon}).addTo(map).bindPopup("Horseshoe Valley Ski Resort");
